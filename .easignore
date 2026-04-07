@@ -1,0 +1,14 @@
+node_modules/
+.git/
+.expo/
+.expo-shared/
+dist/
+build/
+android/
+ios/
+AppData/
+*/AppData/
+*.log
+*.tmp
+*.db
+*.sqlite
