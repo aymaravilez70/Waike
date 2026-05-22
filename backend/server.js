@@ -72,8 +72,8 @@ app.post('/api/song-url', async (req, res) => {
 });
 
 // NUEVO ENDPOINT /api/download (DESPUÉS DEL ANTERIOR)
-app.post('/api/download', async (req, res) => {
-  const { title, artist, songId } = req.body;
+app.get('/api/download', async (req, res) => {
+  const { title, artist, songId } = req.query;
   
   if (!title || !artist || !songId) {
     return res.status(400).json({ error: 'Missing title, artist or songId' });
