@@ -1,0 +1,12 @@
+{
+  "name": "waike-backend",
+  "version": "1.0.0",
+  "description": "Backend for Waike music streaming app",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "redis": "^5.10.0",
+    "yt-dlp-exec": "^1.0.2"
+  }
+}

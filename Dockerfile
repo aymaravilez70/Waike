@@ -12,11 +12,11 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 # Carpeta de trabajo en el contenedor
 WORKDIR /app
 
-# Copiar archivos de dependencias de la raíz
-COPY package*.json ./
+# Copiar el backend package.json al directorio backend
+COPY backend/package*.json ./backend/
 
-# Instalar dependencias de producción de la raíz (incluye express, redis y yt-dlp-exec)
-RUN npm install --omit=dev
+# Instalar dependencias solo para el backend
+RUN cd backend && npm install --omit=dev
 
 # Copiar todo el código del repositorio a la imagen
 COPY . .
@@ -24,5 +24,5 @@ COPY . .
 # Exponer el puerto del servidor
 EXPOSE 5001
 
-# Iniciar el backend ejecutando el archivo server.js que está dentro de backend/
+# Iniciar el backend desde la carpeta raíz ejecutando el servidor
 CMD ["node", "backend/server.js"]
