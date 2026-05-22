@@ -1,3 +1,0 @@
-[phases.setup]
-nixPkgs = ["nodejs", "python3", "ffmpeg"]
-cmds = ["mkdir -p /usr/local/bin && ln -s $(which python3) /usr/local/bin/python"]
